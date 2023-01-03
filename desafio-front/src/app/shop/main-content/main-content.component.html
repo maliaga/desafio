@@ -1,0 +1,41 @@
+<app-breadcrumb [title]="'Tienda'" [breadcrumb]="'Tienda'"></app-breadcrumb>
+<!-- section start -->
+<section class="section-b-space">
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="collection-content col">
+                    <div class="page-main-content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="collection-product-wrapper" id="products">
+                                    <app-grid [products]="products" [paginate]="paginate" [layoutView]="layoutView" (setGrid)="updateGridLayout($event)" (setLayout)="updateLayoutView($event)">
+                                    </app-grid>
+                                    <div class="product-wrapper-grid" [ngClass]="layoutView">
+                                        <div class="row">
+                                            <div class="col-grid-box" [ngClass]="grid" *ngFor="let product of products">
+                                                <div class="product-box">
+                                                    <app-product [product]="product" [cartModal]="true" [loader]="true">
+                                                    </app-product>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 text-center section-b-space mt-5 no-found" *ngIf="!products.length">
+                                                <img src="assets/images/empty-search.jpg" class="img-fluid mb-4">
+                                                <h3>¡Lo siento! ¡¡¡No pudo encontrar el producto que estaba buscando!!! </h3>
+                                                <p>Compruebe si ha escrito algo mal o intente buscar con otras palabras.</p>
+                                                <a [routerLink]="['/shop/tienda']" class="btn btn-solid">continuar comprando</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <app-pagination [products]="products" [paginate]="paginate" (setPage)="setPage($event)">
+                                    </app-pagination>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section End -->

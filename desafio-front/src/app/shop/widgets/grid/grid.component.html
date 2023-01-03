@@ -1,0 +1,28 @@
+<div class="product-top-filter">
+    <div class="row">
+        <div class="col-12">
+            <div class="row">
+                <div class="search-count col-lg-6 col-xl-6 col-md-6 col-12">
+                    <h5>Mostrando 1-{{ products.length }} de {{ paginate.totalItems }} resultados</h5>
+                </div>
+                <div class="grid-view col-lg-6 col-xl-6 col-md-6 col-12" *ngIf="layoutView == 'grid-view'">
+                    <ul>
+                        <li (click)="setGridLayout('col-lg-6')" class="pointer">
+                            <img src="assets/images/icon/2.png" class="product-2-layout-view">
+                        </li>
+                        <li (click)="setGridLayout('col-lg-4')" class="pointer">
+                            <img src="assets/images/icon/3.png" class="product-3-layout-view">
+                        </li>
+                        <li (click)="setGridLayout('col-lg-3')" class="pointer">
+                            <img src="assets/images/icon/4.png" class="product-4-layout-view">
+                        </li>
+                        <li (click)="setGridLayout('col-lg-2')" class="pointer">
+                            <img src="assets/images/icon/6.png" class="product-6-layout-view">
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div *ngIf="!loader">
+    <div class="img-wrapper">
+        <div class="front">
+            <img defaultImage="assets/images/product/placeholder.jpg" [lazyLoad]="product?.image ? 'https://'+product?.image : 'assets/images/product/placeholder.jpg'" class="img-fluid lazy-loading" alt="{{ product?.image }}" />
+
+        </div>
+    </div>
+    <div class="product-detail">
+        <div>
+            <p class="brand">{{ product?.brand }}</p>
+            <p class="description">{{ product?.description }}</p>
+            <h4 class="price">${{ product?.price |number }} </h4>
+        </div>
+        <a href="javascript:void(0)" class="btn-solid btn" title="Add to cart" (click)="actioncart(product)" *ngIf="cartModal">
+            Agregar
+        </a>
+    </div>
+</div>
+<app-skeleton *ngIf="loader"></app-skeleton>
+<app-cart-modal #cartModal [product]="product" *ngIf="cartModal"></app-cart-modal>

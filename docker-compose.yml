@@ -1,0 +1,45 @@
+version: "3"
+services:
+  back-apring:
+    build:
+      context: desafio-back/
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    container_name: desafio-back
+    links:
+      - mongo
+    depends_on:
+      - mongo
+    networks:
+      - shared-net
+  mongo:
+    image: 'mongo:latest'
+    ports:
+      - 27017:27017
+    container_name: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=brandDiscountsUser
+      - MONGO_INITDB_ROOT_PASSWORD=brandDiscountsPassword
+    volumes:
+      - ./database:/database
+    networks:
+      - shared-net
+  app-web:
+    container_name: desafio-front
+    build:
+      context: desafio-front/
+      dockerfile: Dockerfile
+    environment:
+      NODE_ENV: production
+    links:
+      - back-apring
+    depends_on:
+      - back-apring
+    ports:
+      - 80:80
+networks:
+  shared-net:
+    driver: bridge
+volumes:
+  node_modules:

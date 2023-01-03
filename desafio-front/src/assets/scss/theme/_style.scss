@@ -1,0 +1,95 @@
+header {
+    background: #007bff;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    margin: 0 0 20px;
+    .container_top {
+        width: 100%;
+        .search {
+            input {
+                width: 100%;
+                padding: 6px;
+                border: 0;
+                border-radius: 18px;
+                margin-top: 8px;
+            }
+        }
+    }
+    .container_bottom {
+        background: #fff;
+        width: 100%;
+        padding: 10px;
+        box-shadow: 0 0 7px;
+        ul {
+            padding: 0;
+            margin: 0;
+            li {
+                display: inline-block;
+                margin: 0 3px;
+                color: #007bff;
+            }
+        }
+    }
+}
+
+footer {
+    background: gray;
+    margin-top: 40px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.product-box {
+    box-shadow: 0 0 8px grey;
+    margin-bottom: 30px;
+    border-radius: 8px;
+}
+
+.product-detail {
+    padding: 10px;
+}
+
+.btn-solid {
+    background: #007bff;
+    color: #fff;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.grid-view {
+    ul {
+        list-style: none;
+        li {
+            display: inline-block;
+            margin: 0 3px;
+        }
+    }
+}
+
+.modal-content {
+    img {
+        width: 200px;
+    }
+    .buttons {
+        margin: 20px 0 0;
+    }
+}
+
+app-pagination {
+    margin: 20px 0 0;
+    border-top: 1px solid lightgray;
+    padding: 10px 0 0;
+    display: block;
+}
+
+.btn-produc {
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 8px;
+    border: 1px solid#007bff;
+    border-radius: 10px;
+}
